@@ -1,4 +1,5 @@
 using ChatApi.Data;
+using ChatApi.Hubs;
 using ChatApi.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,8 +28,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-//app.MapHub<Chathub>("/muhub");
+app.MapHub<ChatHub>("/chat");
 app.MapControllers();
 
 app.Run();

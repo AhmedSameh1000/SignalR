@@ -11,9 +11,9 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="messages p-3 border text-center">
-                <div class="message my-3" *ngFor="let Message of Messages">
-                    <strong>{{Message.text}}</strong> 
+            <div class="messages p-3 border text-start">
+                <div class="message my-3 bg-info p-2" *ngFor="let Message of Messages">
+                    <strong class="ms-3">{{Message.text}}</strong> 
                 </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ namespace ChatApi.Services
 
         public List<Message> GetMessagesInSpasificGroup(int RoomId)
         {
-            var Messages = _dbContext.messages.Where(m => m.RoomId == RoomId).ToList();
+            var Messages = _dbContext.messages.Where(m => m.RoomId == RoomId).OrderByDescending(c => c.Id).Take(12).ToList();
             return Messages;
         }
 
